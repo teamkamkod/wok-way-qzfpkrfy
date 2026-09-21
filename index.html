@@ -954,7 +954,6 @@
     background-size: cover; background-position: center; background-repeat: no-repeat;
   }
 </style>
-<meta name="robots" content="noindex">
 </head>
 <body>
 
@@ -1358,54 +1357,6 @@
       }
     });
   </script>
-<!-- kamkod:habillage -->
-<meta name="kamkod-version" content="c1a69501b462">
-<div id="kamkod-demo-banner" class="kk-bandeau" data-lead="4be16b48-3f70-42af-bd2b-10d5425f51b0" data-echeance="2026-09-23T05:11:16Z" style="position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;z-index:9999;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;box-shadow:0 -2px 14px rgba(0,0,0,.4);">
-  <div style="max-width:920px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;">
-    <span class="kk-texte" style="flex:1;min-width:200px;font-size:13px;opacity:.8;">Aperçu de votre futur site</span>
-    <span id="kk-offre" class="kk-decompte" data-echeance="2026-09-23T05:11:16Z" style="font-size:14px;font-variant-numeric:tabular-nums;">Aperçu de votre futur site</span>
-    <a class="kk-cta cta" href="https://clic-v2.kamkod.com/api/comportement/clic/4be16b48-3f70-42af-bd2b-10d5425f51b0" rel="noopener" style="background:#EA580C;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;">Activer mon site</a>
-  </div>
-</div>
-<style>#kamkod-demo-banner{opacity:.55;transition:opacity .6s ease}#kamkod-demo-banner.kk-plein{opacity:1}</style>
-<script>(function(){var b=document.getElementById('kamkod-demo-banner');if(!b)return;var plein=false;function allumer(){if(plein){return;}plein=true;b.classList.add('kk-plein');}window.addEventListener('scroll',allumer,{once:true,passive:true});setTimeout(allumer,9000);})();</script>
-<script>window.__KK__={"over":"2026-09-23T05:11:16Z"};</script>
-<script>(function(){
-  var URL = "https://offre.kamkod.com/?lead=4be16b48-3f70-42af-bd2b-10d5425f51b0";
-  var PID = "4be16b48-3f70-42af-bd2b-10d5425f51b0";
-  document.addEventListener('click', function(e){
-    var el = e.target.closest('a, button, [role="button"]');
-    if(!el || el.closest('form')) return;
-    if(el.classList.contains('cta')) { e.preventDefault(); window.location.href = URL; return; }
-    if(el.closest('header nav, nav')) return;
-    var a = e.target.closest('a');
-    if(!a) return;
-    var href = a.getAttribute('href') || '';
-    if(href.charAt(0) === '#') return;
-    if(/^[a-z][a-z0-9+.-]*:/i.test(href)) return;
-    if(href.indexOf('//') === 0) return;
-    e.preventDefault(); window.location.href = URL;
-  }, true);
-})();</script>
-<script>(function(){
-  var el = document.getElementById('kk-offre');
-  if(!el) return;
-  var PID = "4be16b48-3f70-42af-bd2b-10d5425f51b0";
-  var PRIX_L = "", PRIX_O = "";
-  var T_LAUNCH = "Votre aper\u00e7u expire dans \u003cb\u003e%TEMPS%\u003c/b\u003e \u2014 activez-le maintenant pour ne pas le perdre.", T_OVER = "Le d\u00e9ploiement est pass\u00e9 \u00e0 \u003cb\u003e%PRIX%\u003c/b\u003e";
-  var T_VIDE = "Aper\u00e7u de votre futur site";
-  function rendu(){
-    var fin = Date.parse(el.dataset.echeance || "2026-09-23T05:11:16Z");
-    if(!fin){ el.textContent = T_VIDE; return; }
-    var reste = Math.floor((fin - Date.now())/1000);
-    if(reste > 0){ var h=Math.floor(reste/3600), m=Math.floor((reste%3600)/60), s=reste%60;
-      var t = (h>0?(h+' h '):'') + (m<10?'0':'') + m + ' min ' + (s<10?'0':'') + s + ' s';
-      el.innerHTML = T_LAUNCH.replace('%PRIX%', PRIX_L).replace('%TEMPS%', t); }
-    else { el.innerHTML = (PRIX_O || PRIX_L)
-      ? T_OVER.replace('%PRIX%', PRIX_O || PRIX_L) : T_VIDE; }
-  }
-  rendu(); setInterval(rendu, 1000);
-})();</script>
-<!-- /kamkod:habillage -->
-<script>(function(){var s={"lead":"4be16b48-3f70-42af-bd2b-10d5425f51b0","page":"site","t0":Date.now(),"scroll":0};window.addEventListener("scroll",function(){var d=document.documentElement;var y=(typeof window.scrollY==="number")?window.scrollY:(d.scrollTop||document.body.scrollTop||0);var h=(d.scrollHeight||0)-window.innerHeight;s.scroll=Math.max(s.scroll,Math.round((h>0?y/h:0)*100));});var pal=[].slice.call(document.querySelectorAll("[data-palier]"));function maj(){var p=-1;for(var i=0;i<pal.length;i++){var r=pal[i].getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0){var n=parseInt(pal[i].getAttribute("data-palier"),10);if(!isNaN(n)&&n>p){p=n;}}}if(p>=0&&(s.prix_palier===undefined||p>s.prix_palier)){s.prix_palier=p;}}if(pal.length){window.addEventListener("scroll",maj,{passive:true});maj();}document.addEventListener("click",function(e){var c=(e.target&&e.target.closest)?e.target.closest("a.cta,button.cta,.cta"):null;if(c){s.cta_clics=(s.cta_clics||0)+1;}},true);window.addEventListener("pagehide",function(){s.ms=Date.now()-s.t0;try{navigator.sendBeacon("https://clic-v2.kamkod.com/api/comportement/",JSON.stringify(s));}catch(e){var x=new XMLHttpRequest();x.open("POST","https://clic-v2.kamkod.com/api/comportement/",true);x.send(JSON.stringify(s));}});})();</script></body>
+</body>
 </html>
+<!-- kamkod:livre -->
